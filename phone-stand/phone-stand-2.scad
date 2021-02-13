@@ -1,5 +1,9 @@
 include <../lib/BOSL2/std.scad>
 
+// requires lib
+// https://github.com/revarbat/BOSL2
+
+
 // phone stand
 
 
