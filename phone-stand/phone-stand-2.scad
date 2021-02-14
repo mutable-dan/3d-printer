@@ -9,7 +9,7 @@ include <../lib/BOSL2/std.scad>
 
 
 phone_width      = 70;
-phone_thickness  = 14; //  0.5" -> 12.7mm -- used to size phone holder
+phone_depth      = 15.5; //  0.5" -> 12.7mm -- used to size phone holder
 charge_space     = 30; // virtical space from top of base ro bottom of front face, room for charger cord
 //
 //           /\
@@ -36,13 +36,20 @@ function face_z   ( c, t ) = c+t;
 function face_x   ( c, t, a ) = (c+t)/tan(a);
 
 // dim mm
-base_len   = 100;
+base_len   = 115.000;
 thickness  = 5;
 radius     = 10;
 angle      = 60;
 base       = [ base_len-rear_fillet_x(angle, radius), thickness ];
 back       = [ base_len, thickness ];
 front_face = [ base_len, thickness ];
+
+phone_thickness = phone_depth + thickness/4;
+
+// pd = phone_depth-2.3;
+// translate( [4.8,0,43.5]) rotate( [90,120,0] ) square( [4,pd]);
+// echo( "actual phone depth=", pd );
+
 
 rotate( [90, 0, 0])
 difference()
@@ -71,7 +78,7 @@ difference()
     cube_d = base_len;
     y = thickness;
     z = cube_w/2;
-    translate( [0, y, z]) cube(  [cube_d, cube_h, cube_w], center=false );
+    translate( [-thickness, y, z]) cube(  [cube_d, cube_h, cube_w], center=false );
 
     r = cube_w/2;
     translate( [0,r+thickness+cube_h/2+r/2, phone_width/2] ) rotate( [0, 90, 0] ) cylinder( h=base_len, r=r, center=false );
@@ -120,7 +127,7 @@ module draw_phone_craddle()
     union()
     { 
         // phone stand 
-      translate( [face_x(charge_space+thickness/4, thickness/2, angle), face_z(charge_space, thickness/2), 0] ) 
+        translate( [face_x(charge_space+thickness/4, thickness/2, angle), face_z(charge_space, thickness/2), 0] ) 
         rotate( [0,0,angle] )
         {
             union()
@@ -140,7 +147,7 @@ module draw_phone_craddle()
                     {
                         union()
                         {
-                            rotate([-180, 0,-180]) square( [phone_thickness+thickness/4, thickness] );  // bottom 
+                            #rotate([-180, 0,-180]) square( [phone_thickness+thickness/4, thickness] );  // bottom 
                             translate( [-phone_thickness, 0, 0] ) 
                             union()  // lip
                             {
