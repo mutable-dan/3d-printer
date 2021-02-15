@@ -11,8 +11,6 @@ echo( hex_english );
 isMetric = false;
 pct_tolerance = 5;
 
-function pos( a, b ) = a + b;
-
 if( isMetric )
 {
     echo( len(hex_metric), " metric wrenches" );
