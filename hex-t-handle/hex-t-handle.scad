@@ -1,15 +1,16 @@
 // t-hex key holder
 
+// https://github.com/revarbat/BOSL2
 include <lib/BOSL2/std.scad>
 
 hex_english = [ 3/32, 7/64, 1/8, 5/32, 3/16, 7/32, 1/4 ];
 hex_metric  = [  2.5,    3,    4,   5,    6,    8,  10 ];
-// hex_metric      = [  2.5,     5,   10 ];
 
-// hex_metric_txt  = [  "2.5",   "5",  "10" ];
 hex_metric_txt  = [  "2.5",    "3",    "4",   "5",    "6",    "8",  "10" ];
 hex_english_txt = [ "3/32", "7/64", "1/8", "5/32", "3/16", "7/32", "1/4" ];
 
+// hex_metric      = [  2.5,     5,   10 ];     // testing
+// hex_metric_txt  = [  "2.5",   "5",  "10" ];  // testing
 
 isMetric = true;
 
