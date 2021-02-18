@@ -5,6 +5,7 @@ include <../lib/BOSL2/std.scad>
 
 
 // phone stand
+// design insprired by: https://www.thingiverse.com/thing:2120591
 
 
 
