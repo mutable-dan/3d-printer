@@ -1,7 +1,7 @@
 // t-hex key holder
 
 // https://github.com/revarbat/BOSL2
-include <lib/BOSL2/std.scad>
+include <../lib/BOSL2/std.scad>
 
 hex_english = [ 3/32, 7/64, 1/8, 5/32, 3/16, 7/32, 1/4 ];
 hex_metric  = [  2.5,    3,    4,   5,    6,    8,  10 ];
@@ -18,7 +18,7 @@ if( isMetric )
 {
     echo( len(hex_metric), " metric wrenches" );
     mm_tolerance = 0.5;
-    space_between = 22;
+    space_between = 24;
     edge = 8;
     x = ((len(hex_metric)) * space_between)-edge + edge;
     y = 20;
