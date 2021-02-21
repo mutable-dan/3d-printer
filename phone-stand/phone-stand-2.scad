@@ -10,13 +10,13 @@ include <../lib/BOSL2/std.scad>
 
 
 phone_width      = 70;
-phone_depth      = 15.5; //  0.5" -> 12.7mm -- used to size phone holder
+phone_depth      = 19; //15.5; //  0.5" -> 12.7mm -- used to size phone holder
 charge_space     = 30; // virtical space from top of base ro bottom of front face, room for charger cord
 //
 //           /\
 //          /  \
 //         /    \   --------
-//               \     charge0._space
+//               \     charger_space
 //        ________\ ________
 
 $fn = 100;
