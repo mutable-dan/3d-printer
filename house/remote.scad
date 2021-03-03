@@ -45,8 +45,8 @@ rect_tube( size=[wt,dt], wall=t, h=h, rounding=rounding, irounding=rounding*2 )
 
 o2 = -wt/2+t;
 o1 = o0+t;
-#translate( [o1,0,h] ) cube( [w1, t,t], center=false );
-#translate( [o2,5,h] ) cube( [w2, t,t], center=false );
+*translate( [o1,0,h] ) cube( [w1, t,t], center=false );
+*translate( [o2,5,h] ) cube( [w2, t,t], center=false );
 
 
 
