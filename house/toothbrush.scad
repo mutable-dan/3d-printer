@@ -63,7 +63,7 @@ translate( [1.5, 1.25, thickness] )
     linear_extrude( 1 )
     {
         difference()
-        {sc
+        {
             // resize([1, 1+2/32 , 0]) scale([1/100, 1/100, 1/100]) 
             //resize([1+2/32, 1+4/32 , 0]) scale([1/100, 1/100, 1/100]) 
             resize([brush_width+5/32, brush_length+5/32 , 0]) scale([1/100, 1/100, 1/100]) 
