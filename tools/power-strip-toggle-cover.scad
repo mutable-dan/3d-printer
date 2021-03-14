@@ -22,10 +22,10 @@ tolerance = 0.20;
 
 t = 1.5;  // wall thickness
 
-h1 = 21 + t;
-h2 =  5;
-w1 = 50 + 2*t + +tolerance;
-w2 = 47 + 2*t + tolerance;
+h1 = 21 + t;                 // cal:20.4
+h2 =  5;                     // h1 + h2 + 30
+w1 = 50 + 2*t + tolerance;   // cal:52.1
+w2 = 47 + 2*t + tolerance;   // cal:48.0
 l  = 40;
 r  =  1;
 
