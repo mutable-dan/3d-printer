@@ -1,5 +1,5 @@
 // omnipod dash - stand
-// infill 5% - pattern cubic
+// infill 15% - pattern cubic
 // no supports
 
 include <../lib/BOSL2/std.scad>
