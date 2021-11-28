@@ -7,10 +7,13 @@ include <../lib/BOSL2/std.scad>
 // phone stand
 // design insprired by: https://www.thingiverse.com/thing:2120591
 
-
+// actal is 16mm
+// norm 13mm
+// fat 16mm
 
 phone_width      = 70;
-phone_depth      = 15.5; // 15.5 -> ave phone and case, 19 very thick phone and case  0.5" -> 12.7mm -- used to size phone holder
+phone_depth      = 15.5; // actual is 2mm less - 15.5 -> ave phone and case, 19 very thick phone and case  0.5" -> 12.7mm -- used to size phone holder
+//phone_depth      = 18; // actual is 2mm less - 15.5 -> ave phone and case, 19 very thick phone and case  0.5" -> 12.7mm -- used to size phone holder
 charge_space     = 30;   // virtical space from top of base ro bottom of front face, room for charger cord
 //
 //           /\
@@ -20,6 +23,7 @@ charge_space     = 30;   // virtical space from top of base ro bottom of front f
 //        ________\ ________
 
 $fn = 100;
+bDebug = false;
 
 // x, z position of circle (fillet) center
 // used also to make reduce lenghs of base and back face 
@@ -47,10 +51,12 @@ front_face = [ base_len, thickness ];
 
 phone_thickness = phone_depth + thickness/4;
 
-// pd = phone_depth-2.3;
-// translate( [4.8,0,43.5]) rotate( [90,120,0] ) square( [4,pd]);
-// echo( "actual phone depth=", pd );
-
+if( bDebug == true )
+{
+    pd = phone_depth-2;
+    #translate( [6.8,0,47]) rotate( [90,120,0] ) square( [4,pd]);
+    echo( "actual phone depth=", pd );
+}
 
 rotate( [90, 0, 0])
 difference()
@@ -148,7 +154,7 @@ module draw_phone_craddle()
                     {
                         union()
                         {
-                            #rotate([-180, 0,-180]) square( [phone_thickness+thickness/4, thickness] );  // bottom 
+                            rotate([-180, 0,-180]) square( [phone_thickness+thickness/4, thickness] );  // bottom 
                             translate( [-phone_thickness, 0, 0] ) 
                             union()  // lip
                             {
